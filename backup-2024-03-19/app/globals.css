@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #0066FF;
+  --secondary-blue: #00A3FF;
+  --accent-blue: #00D1FF;
+  --bg-light: #f8fafc;
+  --bg-gradient-start: #EEF2FF;
+  --bg-gradient-end: #E0E7FF;
+}
+
+@layer base {
+  body {
+    @apply min-h-screen bg-gradient-to-b from-[var(--bg-gradient-start)] via-white to-[var(--bg-gradient-end)];
+  }
+
+  /* Modern Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-[var(--primary-blue)] to-[var(--accent-blue)] rounded-full;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply cursor-pointer px-2 sm:px-4 py-2 text-sm sm:text-base text-gray-600 transition-all duration-300 
+           hover:text-gray-900 relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 
+           after:bg-gradient-to-r after:from-[var(--primary-blue)] after:to-[var(--accent-blue)] 
+           after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .section-padding {
+    @apply px-4 py-16 sm:py-20 md:py-24 md:px-6 lg:px-8;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-7xl;
+  }
+
+  /* Modern Card Styles */
+  .modern-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-2xl shadow-xl 
+           transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/10 
+           hover:border-[var(--primary-blue)] hover:border-opacity-20;
+  }
+
+  /* Modern Button Styles */
+  .modern-button {
+    @apply px-6 py-3 rounded-full bg-gradient-to-r from-[var(--primary-blue)] to-[var(--accent-blue)]
+           text-white font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30
+           hover:scale-105 active:scale-95;
+  }
+
+  /* Modern Input Styles */
+  .modern-input {
+    @apply bg-white/70 backdrop-blur-sm border border-gray-200 rounded-lg px-4 py-2
+           focus:ring-2 focus:ring-[var(--primary-blue)]/20 focus:border-[var(--primary-blue)]
+           transition-all duration-300;
+  }
+
+  /* Glass Effect */
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl;
+  }
+
+  /* Modern Section Header */
+  .section-header {
+    @apply text-4xl sm:text-5xl font-bold bg-gradient-to-r from-[var(--primary-blue)] 
+           to-[var(--accent-blue)] bg-clip-text text-transparent;
+  }
+
+  /* Background Grid Pattern */
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+                     linear-gradient(to bottom, #e5e7eb 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .section-container {
+    @apply px-4;
+  }
+}
+
+/* Animation Classes */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+/* Modern Grid Layouts */
+.auto-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.feature-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+/* Scale utilities */
+.scale-102 {
+  transform: scale(1.02);
+}

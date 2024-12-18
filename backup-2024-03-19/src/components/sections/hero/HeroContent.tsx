@@ -1,0 +1,1 @@
+// Extract hero content into separate component

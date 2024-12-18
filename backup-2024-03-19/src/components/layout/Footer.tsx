@@ -1,0 +1,1 @@
+// Move Footer.tsx to layout folder
